@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Picture Finder</title>
+    <link rel="stylesheet" href="/css/output.css">
+</head>
+
+<body class="bg-gray-100">
+    <div class="container mx-auto mt-10 ">
+        <h1 class="text-center text-3xl">Pixabay API | <span class="uppercase font-bold text-blue-400">Finder</span>
+        </h1>
+        <div class="mt-10 max-w-lg mx-auto mb-24 ">
+            <form id="form" class="mx-4">
+                <input id="picture"
+                    class=" mx-auto border border-blue-200 bg-blue-100 shadow-lg w-full rounded-md py-1 px-3 mb-4"
+                    type="text" name="picture" placeholder="Name of the picture ">
+                <input
+                    class="mx-auto border border-blue-500 bg-blue-300 shadow-lg w-full rounded-md py-1 px-3 uppercase text-white font-bold"
+                    type="submit" value="Search">
+            </form>
+        </div>
+        <h2 class="uppercase text-center text-2xl font-bold">Results</h2>
+        <div id="result" class="container mx-auto mt-10  flex flex-wrap"></div>
+        <div id="pagination" class="container mx-auto mb-10 text-center flex justify-center flex-wrap"></div>
+
+    </div>
+</body>
+<script src="./js/index.js"></script>
+
+</html>
