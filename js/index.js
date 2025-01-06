@@ -21,19 +21,21 @@ function LoadDocument() {
 
     }
 
-    function searchImages() {
+    async function searchImages() {
         const picture = document.querySelector('#picture').value
         const key = '47537983-620888dcce1c9d0d135ffeafe';
         const url = `https://pixabay.com/api/?key=${key}&q=${picture}&per_page=${forPages}&page=${currentPage}`;
 
-        fetch(url)
-            .then(answer => answer.json())
-            .then(result =>{
-                totalPages = calculatePages(result.totalHits)
-                showImages(result.hits)
-            })
-                
-
+        try{
+            const answer = await fetch(url);
+            const result = await answer.json();
+            totalPages = calculatePages(result.totalHits)
+            showImages(result.hits)
+        }
+        catch(error){
+            console.log(error)
+        }
+        
     }
 
     function showImages(images) {
